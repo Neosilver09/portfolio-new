@@ -20,7 +20,7 @@ export default function ScrollLine() {
   const [ticks,       setTicks]       = useState<number[]>([]); // 0→1 per section
   const [hovered,     setHovered]     = useState(false);
   const [mounted,     setMounted]     = useState(false);
-  const rafRef = useRef<number>();
+ const rafRef = useRef<number | null>(null);
 
   /* Compute section tick positions as fraction 0→1 of total doc height */
   const computeTicks = useCallback(() => {
@@ -154,7 +154,6 @@ export default function ScrollLine() {
                   position: "absolute",
                   left: 22,
                   top: "50%",
-                  transform: "translateY(-50%)",
                   display: "flex",
                   alignItems: "center",
                   gap: 6,
