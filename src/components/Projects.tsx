@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useInView } from "@/hooks/useInView";
+import { useCardTilt } from "@/hooks/useParallax";
 
 const projects = [
   {
@@ -44,17 +45,33 @@ const projects = [
 
 function ProjectCard({ project, delay }: { project: typeof projects[0]; delay: number }) {
   const [expanded, setExpanded] = useState(false);
-  const { ref, inView } = useInView();
+  const { ref: inViewRef, inView } = useInView();
+  const { ref: tiltRef, tilt, onMove, onLeave } = useCardTilt(5);
+
+  // Merge refs
+  const setRef = (el: HTMLDivElement | null) => {
+    (inViewRef as React.MutableRefObject<HTMLDivElement | null>).current = el;
+    (tiltRef as React.MutableRefObject<HTMLDivElement | null>).current = el;
+  };
 
   return (
     <div
-      ref={ref}
-      className="border border-[#1c1c1c] rounded-sm overflow-hidden hover:border-[#2a2a2a] transition-colors duration-300"
+      ref={setRef}
+      className="border border-[#1c1c1c] rounded-sm overflow-hidden transition-colors duration-300"
+      onMouseMove={onMove}
+      onMouseLeave={onLeave}
       style={{
         background:"#080808",
         opacity: inView ? 1 : 0,
-        transform: inView ? "none" : "translateY(20px)",
-        transition: `opacity 0.6s ease ${delay}ms, transform 0.6s ease ${delay}ms`,
+        transform: inView
+          ? `perspective(800px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) translateY(0)`
+          : "perspective(800px) translateY(20px)",
+        boxShadow: `
+          inset 0 0 0 1px rgba(255,255,255,0.03),
+          0 0 ${Math.abs(tilt.x) + Math.abs(tilt.y) > 1 ? 30 : 0}px rgba(79,142,247,0.06)
+        `,
+        transition: `opacity 0.6s ease ${delay}ms, transform 0.15s ease, box-shadow 0.3s ease`,
+        willChange: "transform",
       }}
     >
       <div className="p-6 cursor-pointer select-none" onClick={() => setExpanded(v => !v)}>

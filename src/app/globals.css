@@ -40,7 +40,9 @@ body {
 
 @keyframes orbit-cw  { from { transform: rotate(0deg);    } to { transform: rotate(360deg);  } }
 @keyframes orbit-ccw { from { transform: rotate(0deg);    } to { transform: rotate(-360deg); } }
-@keyframes blink-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
+@keyframes blink-dot  { 0%, 100% { opacity: 1;   } 50% { opacity: 0.2;  } }
+@keyframes star-pulse { 0%, 100% { opacity: 0.9; transform: scale(1);    }
+                        50%       { opacity: 0.3; transform: scale(0.85); } }
 
 @keyframes scanline {
   0%   { top: -2px;  opacity: 0;    }
