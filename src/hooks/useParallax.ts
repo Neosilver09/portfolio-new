@@ -39,7 +39,7 @@ export function useSmoothMouse(factor = 0.08) {
   const [pos, setPos] = useState({ x: 0, y: 0 });
   const target = useRef({ x: 0, y: 0 });
   const current = useRef({ x: 0, y: 0 });
-  const raf = useRef<number>();
+  const raf = useRef<number | null>(null);
 
   useEffect(() => {
     const onMove = (e: MouseEvent) => {
@@ -71,7 +71,7 @@ export function useSmoothMouse(factor = 0.08) {
 export function useSectionScroll() {
   const ref  = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
-  const raf  = useRef<number>();
+  const raf = useRef<number | null>(null);
 
   useEffect(() => {
     const update = () => {
