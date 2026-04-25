@@ -4,9 +4,9 @@ import { useState } from "react";
 import { useInView } from "@/hooks/useInView";
 
 const links = [
-  { label:"EMAIL",    value:"asebanathan3@gatech.edu",          href:"mailto:asebanathan3@gatech.edu",            copy:true  },
+  { label:"EMAIL",    value:"anishan.sebanathan@gmail.com",          href:"mailto:anishan.sebanathan@gmail.com",            copy:true  },
   { label:"GITHUB",   value:"github.com/Neosilver09",           href:"https://github.com/Neosilver09",            copy:false },
-  { label:"LINKEDIN", value:"linkedin.com/in/anishansebanathan", href:"https://linkedin.com/in/anishansebanathan", copy:false },
+  { label:"LINKEDIN", value:"linkedin.com/in/anishan-sebanathan/", href:"https://www.linkedin.com/in/anishan-sebanathan/", copy:false },
 ];
 
 export default function Contact() {

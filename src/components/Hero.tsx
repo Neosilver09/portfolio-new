@@ -367,9 +367,9 @@ export default function Hero() {
         <div className="flex items-center justify-center gap-10 md:gap-20 mt-14 pt-7 border-t border-[#111] w-full max-w-md"
           style={{opacity:subVisible?1:0, transition:"opacity 0.6s ease 0.5s"}}>
           {[
-            {value:"4.0",   label:"GPA / GEORGIA TECH"},
-            {value:"€87M",  label:"DATA PROCESSED"},
-            {value:"€100K", label:"SAVINGS DELIVERED"},
+            {value:"4.0",  label:"GPA / 4.0"},
+            {value:"2×",   label:"M.S. DEGREES"},
+            {value:"4",    label:"SYSTEMS BUILT"},
           ].map((m,i) => (
             <div key={i} className="flex flex-col items-center gap-1">
               <span className="text-lg md:text-xl tracking-tight"

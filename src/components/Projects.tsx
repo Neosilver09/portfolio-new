@@ -6,6 +6,30 @@ import { useCardTilt } from "@/hooks/useParallax";
 
 const projects = [
   {
+    id:"afr-ml", title:"LARGE-SCALE COST PREDICTION SYSTEM", subtitle:"Air France Industries · Production · 2026",
+    tags:["PREDICTIVE ML","DATA PIPELINE","STREAMLIT","€87M SCALE"], color:"#f7a24f", accent:"ML / DATA SYSTEMS",
+    summary:"End-to-end ML system for transportation cost prediction across aviation logistics at enterprise data scale.",
+    detail:[
+      "Designed and trained supervised ML models (gradient boosting + regression ensembles) for multi-dimensional cost forecasting",
+      "Built ETL pipelines to ingest, clean, and transform operational data from heterogeneous logistics sources",
+      "Architected a feature engineering layer capturing temporal, route-level, and fleet-type signals",
+      "Deployed an interactive Streamlit dashboard enabling finance and ops teams to explore predictions and run scenarios",
+    ],
+    stack:"Python · Scikit-learn · Pandas · Streamlit · SQL",
+  },
+  {
+    id:"waarden", title:"WAARDEN — WILDFIRE DECISION SUPPORT SYSTEM", subtitle:"ASDL Grand Challenge · SAAB Technologies · Georgia Tech",
+    tags:["MULTI-AGENT SIM","SYSTEM OF SYSTEMS","DOE","STOCHASTIC"], color:"#e0603a", accent:"SIMULATION / SoS",
+    summary:"Multi-agent System of Systems simulation for wildfire response optimization — coordinating drones, aircraft and ground teams under fog-of-war conditions, sponsored by SAAB Technologies.",
+    detail:[
+      "Implemented a Python-based multi-agent simulation environment on the COLOSSUS SoS framework, coupling stochastic fire propagation (cellular automata, wind & terrain effects) with agent coordination",
+      "Designed a centralized command architecture with agent–commander communication and decision-making under uncertainty, modeling real fog-of-war operational constraints",
+      "Ran a Design of Experiments (~2 500 simulations) to characterize performance across agent configurations and environmental conditions",
+      "Built an interactive dashboard for trade-off exploration across cost, efficiency, and burned-area metrics — delivering actionable decision support for fire operations",
+    ],
+    stack:"Python · COLOSSUS · Agent-based Modeling · Stochastic Simulation · DOE · Data Visualization",
+  },
+  {
     id:"orb-slam", title:"GPS-DENIED NAVIGATION SYSTEM", subtitle:"ASDL Grand Challenge · ONR-Funded · Georgia Tech",
     tags:["ORB-SLAM3","ROS2","PERCEPTION PIPELINE","MPC CONTROL"], color:"#4f8ef7", accent:"PERCEPTION / SLAM",
     summary:"Real-time visual perception and localization pipeline for a marine autonomous vehicle operating in GPS-denied environments.",
@@ -28,18 +52,6 @@ const projects = [
       "Built autonomous navigation behaviors (obstacle avoidance, goal pursuit) on top of the localization stack",
     ],
     stack:"Python · ROS2 · NumPy · LiDAR · IMU",
-  },
-  {
-    id:"afr-ml", title:"LARGE-SCALE COST PREDICTION SYSTEM", subtitle:"Air France Industries · Production · 2026",
-    tags:["PREDICTIVE ML","DATA PIPELINE","STREAMLIT","€87M SCALE"], color:"#f7a24f", accent:"ML / DATA SYSTEMS",
-    summary:"End-to-end ML system for transportation cost prediction across aviation logistics at enterprise data scale.",
-    detail:[
-      "Designed and trained supervised ML models (gradient boosting + regression ensembles) for multi-dimensional cost forecasting",
-      "Built ETL pipelines to ingest, clean, and transform operational data from heterogeneous logistics sources",
-      "Architected a feature engineering layer capturing temporal, route-level, and fleet-type signals",
-      "Deployed an interactive Streamlit dashboard enabling finance and ops teams to explore predictions and run scenarios",
-    ],
-    stack:"Python · Scikit-learn · Pandas · Streamlit · SQL",
   },
 ];
 
